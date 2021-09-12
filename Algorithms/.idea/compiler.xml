@@ -9,5 +9,8 @@
         <module name="Bubble Sort" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Bubble Sort" target="15" />
+    </bytecodeTargetLevel>
   </component>
 </project>
