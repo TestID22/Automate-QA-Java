@@ -1,4 +1,5 @@
 public class BubbleSort {
+
     public static void main(String[] args) {
         int[] arrayForBubbleSorting = new int[]{ 1, 33, 44, 123, 99 , 31, 15, 2, 5};
         int[] sorted = bubbleSore(arrayForBubbleSorting);

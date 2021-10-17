@@ -1,18 +1,15 @@
-public class Main {
+public class GetMinValue {
     public static void main(String[] args) {
-        int[] testArray = new int[]{123, 2, 45, 23};
-        System.out.println(GetMinValue(testArray));
+        int[] testArray = new int[]{1, 23, 4, 4, 32, 54, 12, -12,};
+        System.out.println(getMinValue(testArray));
     }
 
-    public static int GetMinValue(int[] arrayOfNumbers){
-        int minValue = arrayOfNumbers[0];
-        int minIndex = 0;
-        for (int i = 0; i < arrayOfNumbers.length; i++){
-            if(arrayOfNumbers[i] < minValue){
-                minValue = arrayOfNumbers[i];
-                minIndex = i;
+    public static int getMinValue(int[] array){
+        int minValue = array[0];
+        for (int i = 1; i < array.length; i++){
+            if(minValue > array[i]){
+                minValue = array[i];
             }
-        }
-        return minValue;
+        }return minValue;
     }
 }
