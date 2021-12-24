@@ -2,6 +2,7 @@ package TestRail;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 public class BaseRobot {
     Robot robot;
@@ -10,12 +11,13 @@ public class BaseRobot {
         this.robot = new Robot();
     }
 
-    protected void Click(int delay){
-        robot.delay(delay);
+    protected void Click(){
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
-    protected void Click(){
+
+    protected void Click(int delay){
+        robot.delay(delay);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
@@ -25,4 +27,9 @@ public class BaseRobot {
         robot.delay(delay);
     }
 
+    protected void NextLine(int delay){
+        robot.delay(delay);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+    }
 }

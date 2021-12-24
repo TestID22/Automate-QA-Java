@@ -8,7 +8,7 @@ public class TestRailTest {
         Robot robot = new Robot();
         TestRunCreation createNewTestRun = new TestRunCreation(robot);
         createNewTestRun.CreateTestRun();
-        createNewTestRun.AddTestRun();
+        createNewTestRun.AddTestRun("CENGAGE STAGE RELEASE 35", "ISP-1234","ENV WINDOWS 10", "SUT");
 
     }
 }

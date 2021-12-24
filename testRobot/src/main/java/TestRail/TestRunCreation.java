@@ -3,6 +3,7 @@ package TestRail;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.security.Key;
+import java.util.Locale;
 
 public class TestRunCreation extends BaseRobot{
 
@@ -13,7 +14,7 @@ public class TestRunCreation extends BaseRobot{
     public void CreateTestRun(){
         Step(1550,190,1000);        //Test Run button
         Click();
-        Step(1000,546, 1000);       //Dropdowm
+        Step(1000,546, 1000);       //Dropdown
         Click();
         Step(1000,580, 1000);       //Author
         Click();
@@ -21,26 +22,24 @@ public class TestRunCreation extends BaseRobot{
         Click();
     }
 
-    public void AddTestRun(){
+    public void AddTestRun(String name, String reference, String environment, String sut){
         Step(200, 250,1000);
         Click(1000);                                          //Name
         ClearTextField(10, 50);
         robot.delay(1000);
-        EnterWord("CENGAGE STAGE RELEASE 35");
+        EnterWord(name);
         Step(400, 345,1000);                            //References
         Click(1000);
-        EnterWord("YOUR TEST TICKET SHOULT BE HERE");
+        EnterWord(reference);
         Step(400, 540, 1000);                           // Assign to me
         Click(200);
         Step(400, 620, 1000);                           // Assign to me
         Click();
         Step(400, 720, 1000);                           //Description
         Click();
-        EnterWord("ENVIRONMENT WINDOWS 10 GOGGLE VERSION");
-        Click(1000);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        EnterWord("SUT GOOGLE");
-
+        EnterWord(environment);
+        NextLine(1000);
+        EnterWord(sut);
     }
 
     //Cursor goes to the end of text field and starts to delete characters
@@ -52,14 +51,13 @@ public class TestRunCreation extends BaseRobot{
             robot.delay(delayBoferBackSpacing);
         }
     }
+
     //TODO: fix capital word bug
     public void EnterWord(String word){
         char[] arrayOfChars = word.toCharArray();
         for(int i = 0; i < arrayOfChars.length; i++){
-            if(arrayOfChars[i] == 0){
-                robot.keyPress(arrayOfChars[i]);
-            }
-            robot.keyPress(arrayOfChars[i]);
+            robot.keyPress(word.charAt(i));
         }
     }
+
 }
