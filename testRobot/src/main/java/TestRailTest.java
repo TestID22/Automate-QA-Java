@@ -7,5 +7,7 @@ public class TestRailTest {
         Robot robot = new Robot();
         TestRunCreation createNewTestRun = new TestRunCreation(robot);
         createNewTestRun.CreateTestRun();
+
+
     }
 }

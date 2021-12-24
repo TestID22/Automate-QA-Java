@@ -3,10 +3,10 @@ package TestRail;
 import java.awt.*;
 import java.awt.event.InputEvent;
 
-public class TestRunCreation {
-    Robot robot;
-    public TestRunCreation(Robot robot){
-        this.robot = robot;
+public class TestRunCreation extends BaseRobot{
+
+    public TestRunCreation(Robot robot) throws AWTException {
+        super(robot);
     }
 
     public void CreateTestRun(){
@@ -25,9 +25,5 @@ public class TestRunCreation {
         Click();
     }
 
-    private void Click(){
-        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-    }
 
 }
