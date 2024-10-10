@@ -2,7 +2,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] arrayForBubbleSorting = new int[]{ 1, 33, 44, 123, 99 , 31, 15, 2, 5};
-        int[] sorted = bubbleSore(arrayForBubbleSorting);
+        int[] sorted = bubbleSort(arrayForBubbleSorting);
         printArray(sorted);
     }
 
@@ -12,7 +12,7 @@ public class BubbleSort {
         }
     }
 
-    public static int[] bubbleSore(int[] array){
+    public static int[] bubbleSort(int[] array){
        int temp;
        boolean isSorted = false;
        while (!isSorted) {
